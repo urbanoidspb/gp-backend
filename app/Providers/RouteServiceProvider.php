@@ -70,4 +70,14 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }
+
+    /**
+     * @return void
+     */
+    protected function mapAdminRoutes(): void
+    {
+        Route::prefix('admin')
+            ->namespace($this->namespace . '\Admin')
+            ->group(base_path('routes/admin.php'));
+    }
 }
