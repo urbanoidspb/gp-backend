@@ -20,7 +20,7 @@
 <main>
     <section>
         <div class="container">
-            @yield('base')
+            @yield('content')
         </div>
     </section>
 </main>

@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 
-@section('base')
+@section('content')
     <div class="card">
         <div class="card-content grey lighten-4">
             <span class="card-title">Авторизация в панель администратора</span>
