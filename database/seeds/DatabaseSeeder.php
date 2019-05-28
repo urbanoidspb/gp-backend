@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             ImagesTableSeeder::class,
             NewsTableSeeder::class,
             EventsTableSeeder::class,
-            AlbumsTableSeeder::class
+            AlbumsTableSeeder::class,
+            ParticipantsTableSeeder::class
         ]);
 
         $this->call([
