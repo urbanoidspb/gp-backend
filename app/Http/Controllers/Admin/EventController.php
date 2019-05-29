@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Event;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class EventController extends Controller
@@ -34,56 +36,69 @@ class EventController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        dd($request->all());
-    }
+        $eventRequest = $request->only(['title', 'description', 'time']);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $eventRequest['is_relevant'] = false;
+        if ($request->has('is_relevant')) {
+            $eventRequest['is_relevant'] = true;
+        }
+
+        Event::create($eventRequest);
+
+        return redirect()->route('admin.events.index');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Event $event
+     * @return View
      */
-    public function edit($id)
+    public function edit(Event $event): View
     {
-        //
+        return \view('admin.events.edit', compact('event'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Event $event
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Event $event): RedirectResponse
     {
-        //
+        $eventRequest = $request->only(['title', 'description', 'time']);
+
+        $eventRequest['is_relevant'] = false;
+        if ($request->has('is_relevant')) {
+            $eventRequest['is_relevant'] = true;
+        }
+
+        $event->update($eventRequest);
+
+        return redirect()->route('admin.events.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Event $event
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Event $event): RedirectResponse
     {
-        //
+        try {
+            $event->delete();
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
+
+        return redirect()->back();
     }
 }

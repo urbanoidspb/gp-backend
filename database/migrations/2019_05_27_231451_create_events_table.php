@@ -17,7 +17,7 @@ class   CreateEventsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
-            $table->timestamp('time');
+            $table->date('time');
             $table->boolean('is_relevant');
             $table->timestamps();
         });

@@ -27,7 +27,7 @@
                 <div class="input-field col s12">
                     <div class="switch">
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" name="is_relevant">
                             <span class="lever"></span>
                             Актуально
                         </label>
@@ -43,7 +43,7 @@
 
             <div class="row">
                 <div class="col s12">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Создать
+                    <button class="btn waves-effect waves-light" type="submit">Создать
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
@@ -58,6 +58,8 @@
 
         $(document).ready(function(){
             $('.datepicker').datepicker();
+
+            $('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
         });
     </script>
 @endpush
