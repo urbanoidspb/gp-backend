@@ -2,84 +2,88 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Album;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 
 class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
-        //
+        $albums = Album::latest()->paginate(10);
+
+        return \view('admin.albums.index', compact('albums'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return \view('admin.albums.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
-    }
+        Album::create($request->all());
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->route('admin.albums.index');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Album $album
+     * @return View
      */
-    public function edit($id)
+    public function edit(Album $album): View
     {
-        //
+        return \view('admin.albums.edit', compact('album'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param Album $album
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Album $album): RedirectResponse
     {
-        //
+        $album->update($request->all());
+
+        return redirect()->route('admin.albums.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Album $album
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Album $album): RedirectResponse
     {
-        //
+        try {
+            $album->delete();
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
+
+        return redirect()->back();
     }
 }

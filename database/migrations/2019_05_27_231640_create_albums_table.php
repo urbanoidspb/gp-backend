@@ -16,7 +16,7 @@ class CreateAlbumsTable extends Migration
         Schema::create('albums', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->timestamp('time');
+            $table->date('time');
             $table->timestamps();
         });
     }

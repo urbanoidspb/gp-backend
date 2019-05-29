@@ -8,37 +8,20 @@
     </div>
 
     <div class="row">
-        <form class="col s12" action="{{ route('admin.events.update', $event) }}" method="post">
+        <form class="col s12" action="{{ route('admin.albums.update', $album) }}" method="post">
             @csrf
             @method('put')
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="title" type="text" class="validate" name="title" value="{{ $event->title }}">
+                    <input id="title" type="text" class="validate" name="title" value="{{ $album->title }}">
                     <label for="title">Заголовок</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="text" class="materialize-textarea" name="description">{{ $event->description }}</textarea>
-                    <label for="text">Описание</label>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <div class="switch">
-                        <label>
-                            <input type="checkbox" name="is_relevant" @if($event->is_relevant) checked @endif>
-                            <span class="lever"></span>
-                            Актуально
-                        </label>
-                    </div>
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col input-field col s12">
-                    <input type="text" class="datepicker" placeholder="Дата проведения" name="time" value="{{ $event->time }}">
+                    <input type="text" class="datepicker" name="time" placeholder="Дата" value="{{ $album->time }}">
                 </div>
             </div>
 
