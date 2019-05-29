@@ -1,14 +1,14 @@
 @extends('admin.layout.master')
 
-@section('title', 'Изменить новость')
+@section('title', 'Изменить событие')
 
 @section('content')
     <div>
-        <h5 class="left-align">Изменить новость</h5>
+        <h5 class="left-align">Изменить событие</h5>
     </div>
 
     <div class="row">
-        <form class="col s12" action="{{ route('admin.news.update', $news) }}" method="post">
+        <form class="col s12" action="{{ route('admin.events.update', $news) }}" method="post">
             @csrf
             @method('put')
             <div class="row">
