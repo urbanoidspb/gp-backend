@@ -35,6 +35,19 @@
                 </div>
             </div>
 
+            <form action="#">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>File</span>
+                        <input type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Загрузить фотографии">
+                    </div>
+                </div>
+            </form>
+
+
             <div class="row">
                 <div class="col input-field col s12">
                     <input type="text" class="datepicker" name="time" placeholder="Время проведения">

@@ -17,7 +17,7 @@ class Event extends Model
      * @var array
      */
     protected $casts = [
-        'time' => 'datetime',
+        'time' => 'date:Y-m-d',
         'is_relevant' => 'boolean'
     ];
 

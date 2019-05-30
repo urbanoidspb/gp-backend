@@ -16,7 +16,7 @@ class Album extends Model
      * @var array
      */
     protected $casts = [
-        'time' => 'datetime'
+        'time' => 'date:Y-m-d'
     ];
 
     /**
