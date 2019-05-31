@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Contracts\ImageRelationshipsContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Album extends Model
+class Album extends Model implements ImageRelationshipsContract
 {
     /**
      * @var array

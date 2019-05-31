@@ -21,4 +21,12 @@ class Image extends Model
      * @var array
      */
     protected $hidden = ['pivot'];
+
+    /**
+     * @return string
+     */
+    public function getPathAttribute(): string
+    {
+        return config('app.url') . '/storage/' . $this->attributes['path'];
+    }
 }
