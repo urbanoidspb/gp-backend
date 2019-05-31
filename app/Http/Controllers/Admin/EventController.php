@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Event;
+use App\Services\ImageUploader;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -37,9 +38,10 @@ class EventController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
+     * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, ImageUploader $imageUploader): RedirectResponse
     {
         $eventRequest = $request->only(['title', 'description', 'time']);
 
@@ -48,7 +50,11 @@ class EventController extends Controller
             $eventRequest['is_relevant'] = true;
         }
 
-        Event::create($eventRequest);
+        $event = Event::create($eventRequest);
+
+        if ($request->hasFile('photos')) {
+            $imageUploader->upload($event, $request->file('photos'));
+        }
 
         return redirect()->route('admin.events.index');
     }

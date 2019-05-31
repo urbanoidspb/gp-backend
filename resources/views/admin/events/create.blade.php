@@ -8,7 +8,7 @@
     </div>
 
     <div class="row">
-        <form class="col s12" action="{{ route('admin.events.store') }}" method="post">
+        <form class="col s12" action="{{ route('admin.events.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="input-field col s12">
@@ -35,17 +35,15 @@
                 </div>
             </div>
 
-            <form action="#">
-                <div class="file-field input-field">
-                    <div class="btn">
-                        <span>File</span>
-                        <input type="file" multiple>
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="Загрузить фотографии">
-                    </div>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>File</span>
+                    <input type="file"  multiple accept="image/*" name="photos[]">
                 </div>
-            </form>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Загрузить фотографии">
+                </div>
+            </div>
 
 
             <div class="row">

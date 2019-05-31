@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Album;
+use App\Models\Image;
+use App\Services\ImageUploader;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\UploadedFile;
 use Illuminate\View\View;
 
 class AlbumController extends Controller
@@ -36,11 +39,16 @@ class AlbumController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
+     * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, ImageUploader $imageUploader): RedirectResponse
     {
-        Album::create($request->all());
+        $album = Album::create($request->all());
+
+        if ($request->hasFile('photos')) {
+           $imageUploader->upload($album, $request->file('photos'));
+        }
 
         return redirect()->route('admin.albums.index');
     }
