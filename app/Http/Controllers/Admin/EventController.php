@@ -107,4 +107,15 @@ class EventController extends Controller
 
         return redirect()->back();
     }
+
+    /**
+     * @param Event $event
+     * @return View
+     */
+    public  function participants(Event $event): View
+    {
+        $participants = $event->participants()->latest()->paginate(15);
+
+        return \view('admin.events.participants', compact('participants'));
+    }
 }

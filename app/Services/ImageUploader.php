@@ -34,6 +34,11 @@ class ImageUploader
         $model->photos()->attach($imageList);
     }
 
+    public function delete(array $photosPaths): void
+    {
+        
+    }
+
     /**
      * @return string
      */

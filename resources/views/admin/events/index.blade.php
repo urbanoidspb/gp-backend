@@ -40,6 +40,7 @@
 
                             <span class="title">{{ $event->title }}</span>
                             <blockquote>{{ str_limit($event->description) }}</blockquote>
+                            <a class="title" href="{{ route('admin.events.participants', $event) }}">Просмотр участников</a>
                         </li>
                     @endforeach
                 </ul>
