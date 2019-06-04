@@ -16,7 +16,8 @@ class EventController extends Controller
      */
     public function index(): JsonResponse
     {
-        $events = Event::latest()
+        $events = Event::orderBy('is_relevant', 'desc')
+            ->latest()
             ->with('photos')
             ->with('participants')
             ->get();
