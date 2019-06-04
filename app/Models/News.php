@@ -14,6 +14,13 @@ class News extends Model implements ImageRelationshipsContract
     protected $fillable = ['title', 'text'];
 
     /**
+     * @var array
+     */
+    protected $casts = [
+        'created_at' => 'datetime:d.m.Y H:i'
+    ];
+
+    /**
      * @return BelongsToMany
      */
     public function photos(): BelongsToMany

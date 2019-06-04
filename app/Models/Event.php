@@ -18,7 +18,8 @@ class Event extends Model implements ImageRelationshipsContract
      * @var array
      */
     protected $casts = [
-        'time' => 'date:Y-m-d',
+        'time' => 'date:d.m.Y',
+        'created_at' => 'datetime:d.m.Y H:i',
         'is_relevant' => 'boolean'
     ];
 
