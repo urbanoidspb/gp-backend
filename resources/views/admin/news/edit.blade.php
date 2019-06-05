@@ -8,7 +8,7 @@
     </div>
 
     <div class="row">
-        <form class="col s12" action="{{ route('admin.news.update', $news) }}" method="post">
+        <form class="col s12" action="{{ route('admin.news.update', $news) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="row">
@@ -23,6 +23,18 @@
                     <label for="text">Текст</label>
                 </div>
             </div>
+
+            @if(count($news->photos) == 0)
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Файл</span>
+                    <input type="file" accept="image/*" name="photo">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Загрузить фотографию">
+                </div>
+            </div>
+            @endif
 
             <div class="row">
                 <div class="col s12">

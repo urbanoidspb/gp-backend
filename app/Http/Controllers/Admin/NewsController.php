@@ -70,11 +70,16 @@ class NewsController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param News $news
+     * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function update(Request $request, News $news): RedirectResponse
+    public function update(Request $request, News $news, ImageUploader $imageUploader): RedirectResponse
     {
         $news->update($request->all());
+
+        if ($request->hasFile('photo')) {
+            $imageUploader->upload($news, [$request->file('photo')]);
+        }
 
         return redirect()->route('admin.news.index');
     }

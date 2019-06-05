@@ -8,7 +8,7 @@
     </div>
 
     <div class="row">
-        <form class="col s12" action="{{ route('admin.events.update', $event) }}" method="post">
+        <form class="col s12" action="{{ route('admin.events.update', $event) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="row">
@@ -33,6 +33,16 @@
                             Актуально
                         </label>
                     </div>
+                </div>
+            </div>
+
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Файл</span>
+                    <input type="file"  multiple accept="image/*" name="photos[]">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Загрузить фотографии">
                 </div>
             </div>
 

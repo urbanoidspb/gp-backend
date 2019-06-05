@@ -36,6 +36,7 @@ class ImageUploader
     }
 
     /**
+     * @param ImageRelationshipsContract $model
      * @param Image $image
      * @return void
      * @throws \Exception

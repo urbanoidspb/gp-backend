@@ -78,9 +78,10 @@ class EventController extends Controller
      *
      * @param Request $request
      * @param Event $event
+     * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function update(Request $request, Event $event): RedirectResponse
+    public function update(Request $request, Event $event, ImageUploader $imageUploader): RedirectResponse
     {
         $eventRequest = $request->only(['title', 'description', 'time']);
 
@@ -90,6 +91,10 @@ class EventController extends Controller
         }
 
         $event->update($eventRequest);
+
+        if ($request->hasFile('photos')) {
+            $imageUploader->upload($event, $request->file('photos'));
+        }
 
         return redirect()->route('admin.events.index');
     }
