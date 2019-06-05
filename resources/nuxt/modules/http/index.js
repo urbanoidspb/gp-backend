@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const HTTP = axios.create({
-    baseURL: 'http://92.53.97.167/api',
+    baseURL: 'http://peremen.live/api',
 });
 
 export default HTTP
