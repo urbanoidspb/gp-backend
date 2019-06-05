@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\AlbumRequest;
 use App\Models\Album;
 use App\Models\Image;
 use App\Services\ImageUploader;
@@ -38,11 +39,11 @@ class AlbumController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param AlbumRequest $request
      * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function store(Request $request, ImageUploader $imageUploader): RedirectResponse
+    public function store(AlbumRequest $request, ImageUploader $imageUploader): RedirectResponse
     {
         $album = Album::create($request->all());
 
@@ -69,12 +70,12 @@ class AlbumController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param AlbumRequest $request
      * @param Album $album
      * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function update(Request $request, Album $album, ImageUploader $imageUploader): RedirectResponse
+    public function update(AlbumRequest $request, Album $album, ImageUploader $imageUploader): RedirectResponse
     {
         $album->update($request->all());
 

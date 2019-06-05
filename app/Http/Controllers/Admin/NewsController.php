@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\NewsRequest;
 use App\Models\Image;
 use App\Models\News;
 use App\Services\ImageUploader;
@@ -37,11 +38,11 @@ class NewsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param NewsRequest $request
      * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function store(Request $request, ImageUploader $imageUploader): RedirectResponse
+    public function store(NewsRequest $request, ImageUploader $imageUploader): RedirectResponse
     {
         $news = News::create($request->all());
 
@@ -68,12 +69,12 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param NewsRequest $request
      * @param News $news
      * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function update(Request $request, News $news, ImageUploader $imageUploader): RedirectResponse
+    public function update(NewsRequest $request, News $news, ImageUploader $imageUploader): RedirectResponse
     {
         $news->update($request->all());
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\EventRequest;
 use App\Models\Event;
 use App\Models\Image;
 use App\Services\ImageUploader;
@@ -38,11 +39,11 @@ class EventController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param EventRequest $request
      * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function store(Request $request, ImageUploader $imageUploader): RedirectResponse
+    public function store(EventRequest $request, ImageUploader $imageUploader): RedirectResponse
     {
         $eventRequest = $request->only(['title', 'description', 'time']);
 
@@ -76,12 +77,12 @@ class EventController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param EventRequest $request
      * @param Event $event
      * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function update(Request $request, Event $event, ImageUploader $imageUploader): RedirectResponse
+    public function update(EventRequest $request, Event $event, ImageUploader $imageUploader): RedirectResponse
     {
         $eventRequest = $request->only(['title', 'description', 'time']);
 
