@@ -1,5 +1,5 @@
 <template>
-    <section class="gallery" :style="{background:backgroundImage}">
+    <section class="gallery" :style="{background:backgroundImageStyle}">
         <h2>{{galleryPhotos.length}} фото</h2>
         <span class="data">{{galleryTime}}</span>
         <router-link :to="{ path: '/gallery/' + galleryId }"></router-link>
@@ -16,11 +16,17 @@ export default {
         galleryPhotos: Array,
     },
     computed: {
-        backgroundImage() {
-            if (this.galleryPhotos[0] !== undefined) {
-                var style = 'url("' + this.galleryPhotos[0].path + '") 50% 50% no-repeat;'
-                return style;
+        backgroundImageStyle() {
+            if (this.galleryPhotos[0]) {
+                var path = this.galleryPhotos[0].path;
+                return {
+                    backgroundImage: 'url(' + path + ')',
+                    backgroundPosition: '50% 50%',
+                    backgroundRepeat: 'no-repeat'
+                }   
             }
+            
+            return {};
         },
     }
 }

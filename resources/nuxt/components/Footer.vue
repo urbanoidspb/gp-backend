@@ -43,7 +43,7 @@ export default {
         grid-gap: 2vw;
         background: #0C6293;
         color: white;
-        font-family: Rubik;
+        font-family: 'Rubik', sans-serif;
         font-style: normal;
         padding: 5vw 0;
         font-size: 1.125rem;

@@ -51,7 +51,7 @@ const creatStore = () => {
               let Event = this.state.events.find((event) => event.id == eventId);
               context.commit('addParticipantToEvent', { Event, participant});
               HTTP
-                .post('events/1/join', participant)
+                .post('events/' + eventId + '/join', participant)
             }
         }
 

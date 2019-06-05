@@ -96,7 +96,7 @@
             </span>
         </div>
         <div class="right_column">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad14c3274f35025eb9fcd213d64dcafb4fb7dbd4eab063137505fc18e03c3e0e7&amp;width=100%25&amp;height=40vw&amp;lang=ru_RU&amp;scroll=true"></script>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad14c3274f35025eb9fcd213d64dcafb4fb7dbd4eab063137505fc18e03c3e0e7&amp;width=100%&amp;height=40vw&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </section>
     </div>
@@ -241,10 +241,12 @@ html {
     font-size: 1.25rem;
     font-weight: 500;
     margin: 1rem 0;
+    text-align: center;
 }
 
 .post {
     font-weight: normal;
+    text-align: center;
 }
 
 .contacts_map {
@@ -259,7 +261,7 @@ html {
     grid-column: 1/13;
 }
 
-.left_column {
+.contacts_map  .left_column {
     grid-column: 1/5;
     display: flex;
     flex-direction: column;
@@ -276,7 +278,7 @@ html {
 .contact {
     display: flex;
     align-items: center;
-    margin-bottom: 7vw;
+    margin-bottom: 5vw;
 }
 
 .contact img {
@@ -284,7 +286,7 @@ html {
     margin-right: 2rem;
 }
 
-.right_column {
+.contacts_map  .right_column {
     grid-column: 5/13;
 }
 
@@ -372,20 +374,23 @@ html {
 }
 
 @media (max-width: 700px) {
-  .left_column {
+  .contacts_map .left_column {
     grid-column: 1/13;
     font-size: 1.5rem;
   }
   #Navbar {
     margin-bottom: 2vw;
   }
-}
 
-  .right_column {
+  .contacts_map .right_column {
     grid-column: 1/13;
+}
+ .contact {
+    margin-bottom: 2vw;
 }
 .projects {
     grid-column: 2/14;
+}
 }
 
 @media (max-width: 650px) {
@@ -451,6 +456,12 @@ html {
   .post {
     font-size: 1.5rem;
   }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5vw;
+}
 
   .left_column {
     grid-column: 1/13;

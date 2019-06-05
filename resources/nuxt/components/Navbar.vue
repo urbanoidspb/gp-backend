@@ -61,13 +61,13 @@ export default {
         align-items: center;
         list-style: none;
         margin-left: auto;
+        background: #fff;
     }
 
     li > a {
         display: flex;
         flex-direction: column;
         text-align: center;
-        background: transparent;
         justify-content: center;
         text-decoration: none;
         color: #323232;
@@ -96,7 +96,7 @@ export default {
             width: 110%;
             align-items: center;
             padding: 1rem 0;
-            background: white;
+            background: #fff;
         }
 
         li {

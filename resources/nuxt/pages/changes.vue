@@ -13,11 +13,11 @@
     </p>
 
     <div class="date">
-        <div class="day">
+        <!-- <div class="day">
             <h1>11</h1>
             <h1>мая</h1>
-        </div>
-        <p>начинается <span>конкурс проектов</span>, в результате которого лучшие инициативы будут включены в <span>проектную площадку</span> и получат методическую, организационную и финансовую <span>поддержку</span>.</p>
+        </div> -->
+        <p>Это <span>конкурс проектов</span>, в результате которого лучшие инициативы будут включены в <span>проектную площадку</span> и получат методическую, организационную и финансовую <span>поддержку</span>.</p>
     </div>
 
     <section class="steps">
@@ -29,7 +29,7 @@
       <div class="step">
         <img src="~/assets/start.png" alt="">
         <h3>Защити проект</h3>
-        <p><span>27 и 28 мая</span> 2019 г. будет проведена серия 
+        <p> Будет проведена серия 
             <span>публичных защит</span> поданных проектов.</p>
       </div>
       <div class="step">
@@ -50,14 +50,15 @@
         </main>
     </section>
 
-    <router-link class="toInfo" to="/about">Положение о конкурсе</router-link>
+    <!-- <router-link class="toInfo" to="/about">Положение о конкурсе</router-link> -->
 
-    <p class="p1">Срок окончания подачи заявок <span>26 мая 2019 г. до 21:00.
-    29 мая 2019 г.</span> будут подведены итоги конкурса.</p>
+    <!-- <p class="p1">Срок окончания подачи заявок <span>26 мая 2019 г. до 21:00.
+    29 мая 2019 г.</span> будут подведены итоги конкурса.</p> -->
 
     <h2 class="best_wishes">Желаем всем удачи!</h2>
 
-    <router-link class="enter" to="/about">Подать заявку</router-link>
+    
+    <miniModal class="takePartRow"/>
     </div>
     <div class="stand_background">
         <Footer id="Footer"/>
@@ -85,6 +86,7 @@
 import Contacts from '~/components/Contacts.vue'
 import Navbar from '~/components/Navbar.vue'
 import Event from '~/components/Event.vue'
+import miniModal from '~/components/miniModal.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
@@ -92,6 +94,7 @@ export default {
     Contacts,
     Navbar,
     Event,
+    miniModal,
     Footer
   }
 }
@@ -138,7 +141,7 @@ p > span {
     grid-gap: 2vw;
 }
 
-.wrapper .date .day {
+/* .wrapper .date .day {
     grid-column: 1/2;
     display: flex;
     flex-direction: column;
@@ -151,12 +154,13 @@ p > span {
     font-size: 3em;
     line-height: 4rem;
     color: #0C6293;
-}
+} */
 
 .wrapper .date p {
     font-size: 1.5rem;
-    grid-column: 2/9;
-    line-height: 2rem
+    grid-column: 1/9;
+    line-height: 2rem;
+    text-align: center;
 }
 
 .steps {
@@ -238,21 +242,9 @@ section.aims main {
     font-weight: 500;
 }
 
-.wrapper .enter {
+.wrapper .takePartRow {
   grid-column: 6/10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-weight: 500;
-  font-size: 2rem;
-  background: #71D5A2;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 100px;
-  text-decoration: none;
-  color: white;
-  margin-bottom: 4rem;
+  
 }
 
 .stand_background {
@@ -339,7 +331,7 @@ section.aims main {
   .date {
     grid-gap: 4vw;
   }
-  .wrapper .enter {
+  .wrapper .takePart {
     grid-column: 5/11;
   }
   .wrapper .toInfo {
@@ -374,7 +366,7 @@ section.aims main {
   #Navbar {
     margin-bottom: 2vw;
   }
-  .wrapper .enter {
+  .wrapper .takePart {
     grid-column: 4/12;
   }
   .wrapper .toInfo {

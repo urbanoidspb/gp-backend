@@ -1,24 +1,16 @@
 <template>
   <div>
-    <button class="сomeIn" @click="showModal = true" :style="сomeInStyle" :disabled="!eventStatus">Участвовать</button>
+    <button class="takePart" @click="showMiniModal = true">Подать заявку</button>
         <transition name="modal">
-            <div v-if="showModal" class="modal-mask">
+            <div v-if="showMiniModal" class="modal-mask">
                 <div class="modal-wrapper">
                     <div class="modal-container">
-                        <button class="toCloseBtn" @click="showModal = false"></button>
-                        <form method="post" @submit.prevent="testSubmit(eventId, Participant)">
-
-                            <label for="sername">Фамилия</label>
-                            <input id="sername" type="text" v-model="Participant.last_name">
+                        <button class="toCloseBtn" @click="showMiniModal = false"></button>
+                        <form method="post" @submit.prevent="Submit(Participant)">
 
                             <label for="name">Имя</label>
                             <input id="name" type="text" v-model="Participant.first_name">
 
-                            <label for="patronym">Отчество</label>
-                            <input id="patronym" type="text" v-model="Participant.patronymic">
-
-                            <label for="email">e-mail</label>
-                            <input id="email" type="email" v-model="Participant.email">
 
                             <label for="tel">Телефон</label>
                             <input id="tel" type="tel" v-model="Participant.phone">
@@ -28,7 +20,7 @@
                                     <span class="label">Я согласен (согласна) на обработку моих персональных данных </span>
                             </label>
 
-                            <input class="signInBtn" type="submit" value="Присоединиться"  @click="showModal = false">
+                            <input class="signInBtn" type="submit" value="Подать заявку"  @click="showMiniModal = false">
                         </form>
                     </div>
                 </div>
@@ -43,33 +35,23 @@ import {mapMutations, mapActions} from 'vuex'
 export default {
   data() {
     return {
-      showModal: false,
+      showMiniModal: false,
       Participant: {
-        last_name: '',
         first_name: '',
-        patronymic: '',
-        email: '',
         phone: ''
       }
     }
   },
-  props: {
-        eventId: Number,
-        eventStatus: Boolean
-    },
   computed: {
-    сomeInStyle() { 
-            return {
-                background: this.eventStatus ? "#5EB8D3" : "#C4C4C4"
-            }
-        },
+
   },
   methods: {
-    ...mapActions({
-      submitParticipant : 'submitParticipant',
-    }),
-    testSubmit(eventId, participant) {
-      this.submitParticipant({ eventId, participant });
+    // ...mapActions({
+    //   submitParticipant : 'submitParticipant',
+    // }),
+    Submit(participant) {
+    //   this.submitParticipant({ participant });
+
     }
   },
 }
@@ -77,22 +59,24 @@ export default {
 
 <style scoped>
 
-.сomeIn {
+.takePart {
   display: flex;
-  align-items: center;
   justify-content: center;
- 
-        width: 100%;
-        height: 100%;
-        border: none;
-        font-size: 1.5rem;
-        border-radius: 30px;
-        font-family: 'Rubik', sans-serif;
-        outline: none;
-        color: white;
-        font-weight: 500;
-        cursor: pointer;
-    }
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  font-size: 2rem;
+  background: #71D5A2;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 4rem;
+  cursor: pointer;
+  height: 5rem;
+}
 
 button {
   cursor: pointer;  

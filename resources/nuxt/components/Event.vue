@@ -1,6 +1,6 @@
 <template>
     <section class="card">
-        <div class="photo" :style="{background:backgroundImage}">
+        <div class="photo" :style="backgroundImageStyle">
             <span class="status">
                 <div class="circ" :style="circStyle"></div>
                 <span id="status" :style="statusStyle">{{statusText}}</span>
@@ -34,11 +34,17 @@ export default {
         title() {
             return this.eventTitle.slice(0,40) + this.ellipsis
         },
-        backgroundImage() {
-            if (this.eventPhoto !== undefined) {
-                var style = 'url("' + this.eventPhoto.path + '") 50% 50% no-repeat;'
-                return style;
+        backgroundImageStyle() {
+            if (this.eventPhoto) {
+                var path = this.eventPhoto.path;
+                return {
+                    backgroundImage: 'url(' + path + ')',
+                    backgroundPosition: '50% 50%',
+                    backgroundRepeat: 'no-repeat'
+                }   
             }
+            
+            return {};
         },
         statusText() {
             return this.eventStatus ? "Активно" : "Закончилось"

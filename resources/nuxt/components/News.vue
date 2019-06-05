@@ -1,5 +1,5 @@
 <template>
-    <section class="news" :style="{background: backgroundImage}">
+    <section class="news" :style="backgroundImageStyle">
         <h2>{{title}}</h2>
         <span class="news_data">{{NewsItemDate}}</span>
         <router-link :to="{ path: '/news/' + NewsItemId }"></router-link>
@@ -20,12 +20,18 @@ export default {
         NewsItemPhoto: Object
     },
     computed: {
-        backgroundImage() {
-            if (this.NewsItemPhoto !== undefined) {
-                    var style = 'url("' + this.NewsItemPhoto.path + '") 50% 50% no-repeat;'
-                    return style;
+        backgroundImageStyle() {
+            if (this.NewsItemPhoto) {
+                var path = this.NewsItemPhoto.path;
+                return {
+                    backgroundImage: 'url(' + path + ')',
+                    backgroundPosition: '50% 50%',
+                    backgroundRepeat: 'no-repeat'
+                }   
             }
-        }, 
+            
+            return {};
+        },
         title() {
             return this.NewsItemTitle.slice(0,27) + this.ellipsis
         },   
