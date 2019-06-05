@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Contracts\ImageRelationshipsContract;
 use App\Models\Image;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class ImageUploader
 {
@@ -34,9 +35,16 @@ class ImageUploader
         $model->photos()->attach($imageList);
     }
 
-    public function delete(array $photosPaths): void
+    /**
+     * @param Image $image
+     * @return void
+     * @throws \Exception
+     */
+    public function delete(ImageRelationshipsContract $model, Image $image): void
     {
-        
+        Storage::delete('public/' . $image->realPath);
+        $model->photos()->detach($image);
+        $image->delete();
     }
 
     /**

@@ -25,7 +25,7 @@
 
             <div class="file-field input-field">
                 <div class="btn">
-                    <span>File</span>
+                    <span>Файл</span>
                     <input type="file" accept="image/*" name="photo">
                 </div>
                 <div class="file-path-wrapper">

@@ -37,7 +37,7 @@
 
             <div class="file-field input-field">
                 <div class="btn">
-                    <span>File</span>
+                    <span>Файл</span>
                     <input type="file"  multiple accept="image/*" name="photos[]">
                 </div>
                 <div class="file-path-wrapper">

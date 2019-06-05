@@ -61,6 +61,8 @@ class AlbumController extends Controller
      */
     public function edit(Album $album): View
     {
+        $album->load('photos');
+
         return \view('admin.albums.edit', compact('album'));
     }
 
@@ -69,11 +71,16 @@ class AlbumController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param Album $album
+     * @param ImageUploader $imageUploader
      * @return RedirectResponse
      */
-    public function update(Request $request, Album $album): RedirectResponse
+    public function update(Request $request, Album $album, ImageUploader $imageUploader): RedirectResponse
     {
         $album->update($request->all());
+
+        if ($request->hasFile('photos')) {
+            $imageUploader->upload($album, $request->file('photos'));
+        }
 
         return redirect()->route('admin.albums.index');
     }
@@ -88,6 +95,23 @@ class AlbumController extends Controller
     {
         try {
             $album->delete();
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
+
+        return redirect()->back();
+    }
+
+    /**
+     * @param Image $image
+     * @param Album $album
+     * @param ImageUploader $imageUploader
+     * @return RedirectResponse
+     */
+    public function deleteImage(Album $album, Image $image, ImageUploader $imageUploader): RedirectResponse
+    {
+        try {
+            $imageUploader->delete($album, $image);
         } catch (\Exception $e) {
             return redirect()->back();
         }

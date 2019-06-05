@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Image;
 use App\Models\News;
 use App\Services\ImageUploader;
 use Illuminate\Http\RedirectResponse;
@@ -59,6 +60,8 @@ class NewsController extends Controller
      */
     public function edit(News $news): View
     {
+        $news->load('photos');
+
         return \view('admin.news.edit', compact('news'));
     }
 
@@ -86,6 +89,23 @@ class NewsController extends Controller
     {
         try {
             $news->delete();
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
+
+        return redirect()->back();
+    }
+
+    /**
+     * @param News $news
+     * @param Image $image
+     * @param ImageUploader $imageUploader
+     * @return RedirectResponse
+     */
+    public function deleteImage(News $news, Image $image, ImageUploader $imageUploader): RedirectResponse
+    {
+        try {
+            $imageUploader->delete($news, $image);
         } catch (\Exception $e) {
             return redirect()->back();
         }

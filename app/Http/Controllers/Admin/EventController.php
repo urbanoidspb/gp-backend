@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Event;
+use App\Models\Image;
 use App\Services\ImageUploader;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -67,6 +68,8 @@ class EventController extends Controller
      */
     public function edit(Event $event): View
     {
+        $event->load('photos');
+
         return \view('admin.events.edit', compact('event'));
     }
 
@@ -117,5 +120,22 @@ class EventController extends Controller
         $participants = $event->participants()->latest()->paginate(15);
 
         return \view('admin.events.participants', compact('participants'));
+    }
+
+    /**
+     * @param Event $event
+     * @param Image $image
+     * @param ImageUploader $imageUploader
+     * @return RedirectResponse
+     */
+    public function deleteImage(Event $event, Image $image, ImageUploader $imageUploader): RedirectResponse
+    {
+        try {
+            $imageUploader->delete($event, $image);
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
+
+        return redirect()->back();
     }
 }

@@ -29,4 +29,12 @@ class Image extends Model
     {
         return config('app.url') . '/storage/' . $this->attributes['path'];
     }
+
+    /**
+     * @return string
+     */
+    public function getRealPathAttribute(): string
+    {
+        return $this->attributes['path'];
+    }
 }

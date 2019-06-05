@@ -5,3 +5,9 @@ form.collection--delete-item {
 .container {
     margin-top: 20px;
 }
+
+.photo-block {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}

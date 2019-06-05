@@ -33,6 +33,21 @@
             </div>
         </form>
     </div>
+
+    <div class="row">
+        <div class="col input-field col s12">
+            @foreach($news->photos as $photo)
+                <form method="post" class="photo-block" action="{{ route('admin.news.images.delete',
+                ['news' => $news, 'image' => $photo]) }}">
+                    @method('delete')
+                    @csrf
+                    <img alt="#" class="z-depth-2" src="{{ $photo->path }}" width="93" height="100">
+                    <br>
+                    <button class="waves-effect waves-light btn-small red">Удалить</button>
+                </form>
+            @endforeach
+        </div>
+    </div>
 @endsection
 
 @push('scripts')
