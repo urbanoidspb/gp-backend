@@ -1,19 +1,19 @@
 <template>
   <div>
-    <button class="takePart" @click="showMiniModal = true">Подать заявку</button>
+    <button class="takePart takePartRow" @click="showMiniModal = true" >Присоединиться</button>
         <transition name="modal">
             <div v-if="showMiniModal" class="modal-mask">
                 <div class="modal-wrapper">
                     <div class="modal-container">
                         <button class="toCloseBtn" @click="showMiniModal = false"></button>
-                        <form method="post" @submit.prevent="Submit(Participant)">
+                        <form method="post" @submit.prevent="Submit(member)">
 
                             <label for="name">Имя</label>
-                            <input id="name" type="text" v-model="Participant.first_name">
+                            <input id="name" type="text" v-model="member.name">
 
 
                             <label for="tel">Телефон</label>
-                            <input id="tel" type="tel" v-model="Participant.phone">
+                            <input id="tel" type="tel" v-model="member.phone">
 
                             <label class="check_label">
                                     <input class="checkbox" type="checkbox" name="checkbox-test">
@@ -36,8 +36,8 @@ export default {
   data() {
     return {
       showMiniModal: false,
-      Participant: {
-        first_name: '',
+      member: {
+        name: '',
         phone: ''
       }
     }
@@ -46,11 +46,12 @@ export default {
 
   },
   methods: {
-    // ...mapActions({
-    //   submitParticipant : 'submitParticipant',
-    // }),
-    Submit(participant) {
-    //   this.submitParticipant({ participant });
+    ...mapActions({
+        submitMember : 'submitMember',
+    }),
+    Submit(member) {
+       this.submitMember({ member });
+       this.showMiniModal = false;
 
     }
   },

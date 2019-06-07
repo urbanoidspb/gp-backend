@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group([
+    'prefix' => 'members',
+], function () {
+    Route::post('join', 'MemberController@store');
+});
+
+Route::group([
     'prefix' => 'news',
 ], function () {
     Route::get('/', 'NewsController@index');

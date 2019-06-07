@@ -52,6 +52,10 @@ const creatStore = () => {
               context.commit('addParticipantToEvent', { Event, participant});
               HTTP
                 .post('events/' + eventId + '/join', participant)
+            },
+            submitMember (context, { member }) {
+                HTTP
+                    .post('members/join', member)
             }
         }
 

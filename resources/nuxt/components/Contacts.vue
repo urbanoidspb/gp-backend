@@ -5,9 +5,9 @@
             <a href="mailto:gorod@peremen.ru">gorod@peremen.ru</a>
         </nav>
         <nav class="contacts_item contacts_item_right">
-            <a href="youtube"><img src="~/assets/youtube.png" alt=""></a>
-            <a href="vk"><img src="~/assets/vk.png" alt=""></a>
-            <a href="inst"><img src="~/assets/insta.png" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCr26U87t9bCn7m4jtEhh4og" target="_blank"><img src="~/assets/youtube.png" alt=""></a>
+            <a href="https://vk.com/spbperemen" target="_blank"><img src="~/assets/vk.png" alt=""></a>
+            <a href="https://www.instagram.com/peterburggorod/" target="_blank"><img src="~/assets/insta.png" alt=""></a>
         </nav>
     </section>
 </template>

@@ -56,9 +56,7 @@
     29 мая 2019 г.</span> будут подведены итоги конкурса.</p> -->
 
     <h2 class="best_wishes">Желаем всем удачи!</h2>
-
-    
-    <miniModal class="takePartRow"/>
+      <a class="SignInButton takePart takePartRow" href="/files/anketa.docx" target="_blank">Подать заявку</a>
     </div>
     <div class="stand_background">
         <Footer id="Footer"/>
@@ -104,6 +102,25 @@ export default {
 html {
   font-size: 16px;
 }
+.takePart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 500;
+    font-size: 2rem;
+    background: #71D5A2;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 100px;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 4rem;
+    cursor: pointer;
+    height: 5rem;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 4fr repeat(12, 1fr) 4fr;

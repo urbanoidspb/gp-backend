@@ -1,5 +1,5 @@
 <template>
-    <section class="gallery" :style="{background:backgroundImageStyle}">
+    <section class="gallery" :style="backgroundImageStyle">
         <h2>{{galleryPhotos.length}} фото</h2>
         <span class="data">{{galleryTime}}</span>
         <router-link :to="{ path: '/gallery/' + galleryId }"></router-link>

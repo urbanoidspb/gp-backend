@@ -5,7 +5,7 @@ module.exports = laravelNuxt({
   ** Headers of the page
   */
   head: {
-    title: 'spb',
+    title: 'Петербург - город перемен',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

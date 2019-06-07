@@ -9,7 +9,7 @@
       <img src="~/assets/main_background.png" alt="">
       <h2>Проектная площадка</h2>
       <h1>"Петербург - город перемен"</h1>
-      <button class="SignInButton">Присоединиться</button>
+      <miniModal class="takePartRow"/>
       <p>*Форма заполняемая личными данными</p>
     </section>
 
@@ -78,6 +78,7 @@ import Navbar from '~/components/Navbar.vue'
 import Event from '~/components/Event.vue'
 import News from '~/components/News.vue'
 import Footer from '~/components/Footer.vue'
+import miniModal from '~/components/miniModal.vue'
 
 export default {
   components: {
@@ -85,7 +86,8 @@ export default {
     Navbar,
     Event,
     News,
-    Footer
+    Footer,
+    miniModal
   },
   async asyncData ({store}) {
       await store.dispatch('actSetEvents');

@@ -10,9 +10,9 @@
        </ul>
        <section class="footer_item contacts">
             <nav class="contacts_item contacts_item_up">
-                <a href="youtube"><img src="~/assets/footer_youtube.png" alt=""></a>
-                <a href="vk"><img src="~/assets/footer_vk.png" alt=""></a>
-                <a href="inst"><img src="~/assets/footer_insta.png" alt=""></a>
+                <a href="https://www.youtube.com/channel/UCr26U87t9bCn7m4jtEhh4og" target="_blank"><img src="~/assets/footer_youtube.png" alt=""></a>
+                <a href="https://vk.com/spbperemen" target="_blank"><img src="~/assets/footer_vk.png" alt=""></a>
+                <a href="https://www.instagram.com/peterburggorod/" target="_blank"><img src="~/assets/footer_insta.png" alt=""></a>
             </nav>
             <nav class="contacts_item contacts_item_down">
                 <p>Контактная информация:</p>
