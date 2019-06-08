@@ -96,7 +96,7 @@
             </span>
         </div>
         <div class="right_column">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad14c3274f35025eb9fcd213d64dcafb4fb7dbd4eab063137505fc18e03c3e0e7&amp;width=100%&amp;height=40vw&amp;lang=ru_RU&amp;scroll=true"></script>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abb380dd4a1d540e0392435f9438aa6fce3e42ee01a9a47f429aa150a0c04b920&amp;width=100%&amp;height=40vw&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </section>
     </div>

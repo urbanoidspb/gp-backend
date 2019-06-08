@@ -52,8 +52,14 @@ export default {
     Submit(member) {
        this.submitMember({ member });
        this.showMiniModal = false;
-
-    }
+    },
+    // ...mapActions({
+    //   submitParticipant : 'submitParticipant',
+    // }),
+    // Submit(participant) {
+    // //   this.submitParticipant({ participant });
+    //     HTTP.post('events', participant)
+    // }
   },
 }
 </script>
@@ -77,6 +83,7 @@ export default {
   margin-bottom: 4rem;
   cursor: pointer;
   height: 5rem;
+  outline: none;
 }
 
 button {

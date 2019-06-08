@@ -132,6 +132,7 @@ html {
     grid-column: 2/6;
     margin: 2vw 0;
     line-height: 2.5rem;
+    white-space: pre-line;
 }
 
 .ModalRow {

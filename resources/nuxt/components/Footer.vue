@@ -23,7 +23,7 @@
         <section class="footer_item poweredby">
             <img class="logo" src="~/assets/footer_logo.png" alt="">
             <p>© 2019 Петербург - город перемен</p>
-            <p>powered by <span style="font-weight: 500">Bonch.dev</span></p>
+            <p>powered by <span style="font-weight: 500"><a target="_blank" href="https://bonch.dev">Bonch.dev</a></span></p>
         </section>
     </footer>
 </template>
@@ -122,6 +122,11 @@ export default {
     .poweredby img {
         width: 60%;
         margin-bottom: 1rem;
+    }
+
+    .poweredby a{
+        color: #fff;
+        text-decoration: none;
     }
 
     @media (min-width: 576px) and (max-width: 855px) {
