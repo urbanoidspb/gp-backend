@@ -72,7 +72,7 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 2rem;
   background: #71D5A2;
   padding: 1rem 2rem;
@@ -80,7 +80,7 @@ export default {
   border-radius: 100px;
   text-decoration: none;
   color: white;
-  margin-bottom: 4rem;
+  margin-bottom: 0.5rem;
   cursor: pointer;
   height: 5rem;
   outline: none;
@@ -272,5 +272,21 @@ input[type=tel] {
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.takePart {
+  width: 100%;
+  font-weight: bold;
+  font-size: 3rem;
+  background: #71D5A2;
+  padding: 2.5rem 6rem;
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  height: 8rem;
+  outline: none;
 }
 </style>

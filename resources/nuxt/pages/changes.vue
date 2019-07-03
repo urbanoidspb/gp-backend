@@ -123,7 +123,7 @@ html {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
+  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
   font-family: 'Rubik', sans-serif;
   font-size: 1.5rem;
 }
@@ -227,10 +227,12 @@ section.aims main {
 
 .aim {
     width: 100%;
-    font-size: 1.2rem;
-    padding: 2rem 1rem;
-    color: white;
-    background: #5EB8D3;
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding: 2.5rem 1rem;
+    color: #000;
+    background: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 30px;
     text-align: center;
 }
@@ -261,7 +263,6 @@ section.aims main {
 
 .wrapper .takePartRow {
   grid-column: 6/10;
-  
 }
 
 .stand_background {
@@ -269,7 +270,7 @@ section.aims main {
   background: #0C6293;
   grid-column: 1/15;
   display: grid;
-  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
+  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
 }
 
 #Footer {
@@ -393,7 +394,7 @@ section.aims main {
 
 @media (max-width: 420px) {
   .wrapper {
-  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
+  grid-template-columns: 0.5fr repeat(12, 1fr) 0.5fr;
 }
   html {
   font-size: 6px;

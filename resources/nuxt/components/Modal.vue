@@ -78,14 +78,11 @@ export default {
 <style scoped>
 
 .сomeIn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
- 
+  padding: 1.5rem 2rem;
+ height: 5rem;
         width: 100%;
-        height: 100%;
         border: none;
-        font-size: 1.5rem;
+        font-size: 2rem;
         border-radius: 30px;
         font-family: 'Rubik', sans-serif;
         outline: none;
@@ -204,18 +201,7 @@ input[type=tel] {
     right: 0;
 }
 
-@media (max-width: 850px) {
-  .сomeIn {
-    font-size: 1.4rem;
-  }
-}
-
 @media (max-width: 576px) {
-
-  .сomeIn {
-    font-size: 1.3rem;
-  }
-
   label {
     font-size: 2rem;
   }
@@ -252,19 +238,30 @@ input[type=tel] {
   }
 }
 
-@media (max-width: 480px) {
-  .сomeIn {
-    font-size: 1.2rem;
+@media (min-width: 1450px) {
+   .сomeIn {
+    font-size: 2rem;
+    padding: 1.3rem 2rem;
+    height: 4.6rem;
   }
+}
+
+@media (max-width: 480px) {
   .modal-container {
   width: 60vw;
    padding: 4vw;
+  }
+   .сomeIn {
+    padding: 1.3rem 2rem;
+    height: 4.6rem;
   }
 }
 
 @media (max-width: 420px) {
    .сomeIn {
     font-size: 1.7rem;
+    padding: 1.1rem 1rem;
+    height: 3.9rem;
   }
 }
 

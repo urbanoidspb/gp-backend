@@ -9,7 +9,7 @@
         </div>
         <section class="information">
             <router-link :to="{ path: '/events/' + eventId }" class="event_name">{{title}}</router-link>
-            <p class="event_date">{{eventTime}}</p>
+            <time class="event_date">{{eventTime}}</time>
             <Modal class="сomeIn" v-bind:event-id="eventId" v-bind:event-status="eventStatus"/>
         </section>
     </section>
@@ -71,7 +71,7 @@ export default {
     .card {
         padding: 0;
         width: 100%;
-        height: 25vw;
+        height: 35vw;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
@@ -100,25 +100,38 @@ export default {
         position: relative;
     }
 
+    /* <span class="status">
+                <div class="circ" :style="circStyle"></div>
+                <span id="status" :style="statusStyle">{{statusText}}</span>
+            </span> */
+
     .status {
-        display: flex;
-        align-items: center;
-        text-align: center;
+        display: inline-block;
         font-weight: 500;
-        font-size: 0.875rem;
+        font-size: 1rem;
+        padding: 0;margin: 0;
         color: #4AE0B3;
-        max-width: 47%;
         background: rgba(255, 255, 255, 0.9);
-        border-radius: 15px;
+        border-radius: 20px;
+        vertical-align: center;
     }
 
     .circ {
-        width: 2em;
-        height: 2em;
+        display: inline-block;
+        width: 2.5em;
+        height: 2.5em;
         background: #4AE0B3;
         border-radius: 50%;
-        margin-right: 0.3rem;
         box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.5);
+         vertical-align: middle;
+    }
+
+    #status {
+        display: inline-block;
+         vertical-align: middle;
+         padding: 0 0.8rem 0 0;
+
+
     }
 
     .information {
@@ -133,13 +146,13 @@ export default {
     .information .event_name {
         width: 100%;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: 500;
         color: #323232;
     }
 
     .information .event_date {
-        font-size: 1.125rem;
+        font-size: 1.5rem;
         color: black;
     }
 
@@ -155,9 +168,6 @@ export default {
         .information .event_name {
             font-size: 1.8rem;
         }
-        .information .event_date {
-            font-size: 1rem;
-        }
         .information .сomeIn {
             font-size: 2.5rem;
         }
@@ -166,19 +176,16 @@ export default {
         }
     }
 
-    @media (max-width: 480px) {
-
-    }
-
     @media (max-width: 420px) {
         .card {
             height: 50vw;
+            border-radius: 10px;
         }
         .status {
             font-size: 1.2rem;
         }
         .information .event_name {
-            font-size: 2.2rem;
+            font-size: 1.7rem;
         }
         .circ {
             width: 2em;
@@ -187,6 +194,7 @@ export default {
         }
         .photo {
             padding: 1.5rem 1.5rem;
+            border-radius: 10px 10px 0 0;
         }
         .information .event_date {
             font-size: 1.5rem;

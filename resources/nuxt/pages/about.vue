@@ -144,7 +144,7 @@ html {
 }
 .wrapper {
   display: grid;
-  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
+  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -299,7 +299,7 @@ html {
   background: #0C6293;
   grid-column: 1/15;
   display: grid;
-  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
+  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
 }
 
 #Footer {
@@ -419,7 +419,7 @@ html {
   font-size: 6px;
   }
   .wrapper {
-  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
+  grid-template-columns: 0.5fr repeat(12, 1fr) 0.5fr;
 }
   .wrapper > p {
     grid-column: 2/14;
@@ -435,10 +435,12 @@ html {
     grid-template-columns: 1fr;
     grid-gap: 2vw;
   }
+
   .project {
     background: transparent;
     color: #5EB8D3;
     padding: 0;
+    margin: 1rem 0;
     font-size: 2rem;
   }
 

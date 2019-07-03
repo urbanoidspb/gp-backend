@@ -2,15 +2,15 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _3cf23b9a = () => interopDefault(import('..\\resources\\nuxt\\pages\\about.vue' /* webpackChunkName: "pages_about" */))
-const _39d22ae9 = () => interopDefault(import('..\\resources\\nuxt\\pages\\changes.vue' /* webpackChunkName: "pages_changes" */))
-const _ea4c4e82 = () => interopDefault(import('..\\resources\\nuxt\\pages\\events\\index.vue' /* webpackChunkName: "pages_events_index" */))
-const _57d48d8a = () => interopDefault(import('..\\resources\\nuxt\\pages\\gallery\\index.vue' /* webpackChunkName: "pages_gallery_index" */))
-const _ce2afb76 = () => interopDefault(import('..\\resources\\nuxt\\pages\\news\\index.vue' /* webpackChunkName: "pages_news_index" */))
-const _d7960232 = () => interopDefault(import('..\\resources\\nuxt\\pages\\events\\_id.vue' /* webpackChunkName: "pages_events__id" */))
-const _0d5c6a72 = () => interopDefault(import('..\\resources\\nuxt\\pages\\gallery\\_id.vue' /* webpackChunkName: "pages_gallery__id" */))
-const _034e51ed = () => interopDefault(import('..\\resources\\nuxt\\pages\\news\\_id.vue' /* webpackChunkName: "pages_news__id" */))
-const _013ebcf8 = () => interopDefault(import('..\\resources\\nuxt\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _ed45b754 = () => interopDefault(import('../resources/nuxt/pages/about.vue' /* webpackChunkName: "pages/about" */))
+const _4520704c = () => interopDefault(import('../resources/nuxt/pages/changes.vue' /* webpackChunkName: "pages/changes" */))
+const _4dccb1ba = () => interopDefault(import('../resources/nuxt/pages/events/index.vue' /* webpackChunkName: "pages/events/index" */))
+const _b82b08c4 = () => interopDefault(import('../resources/nuxt/pages/gallery/index.vue' /* webpackChunkName: "pages/gallery/index" */))
+const _8c3a9fc6 = () => interopDefault(import('../resources/nuxt/pages/news/index.vue' /* webpackChunkName: "pages/news/index" */))
+const _3c1d164b = () => interopDefault(import('../resources/nuxt/pages/events/_id.vue' /* webpackChunkName: "pages/events/_id" */))
+const _cf0264f4 = () => interopDefault(import('../resources/nuxt/pages/gallery/_id.vue' /* webpackChunkName: "pages/gallery/_id" */))
+const _58afd476 = () => interopDefault(import('../resources/nuxt/pages/news/_id.vue' /* webpackChunkName: "pages/news/_id" */))
+const _add601ca = () => interopDefault(import('../resources/nuxt/pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 Vue.use(Router)
 
@@ -88,39 +88,39 @@ export function createRouter() {
 
     routes: [{
       path: "/about",
-      component: _3cf23b9a,
+      component: _ed45b754,
       name: "about"
     }, {
       path: "/changes",
-      component: _39d22ae9,
+      component: _4520704c,
       name: "changes"
     }, {
       path: "/events",
-      component: _ea4c4e82,
+      component: _4dccb1ba,
       name: "events"
     }, {
       path: "/gallery",
-      component: _57d48d8a,
+      component: _b82b08c4,
       name: "gallery"
     }, {
       path: "/news",
-      component: _ce2afb76,
+      component: _8c3a9fc6,
       name: "news"
     }, {
       path: "/events/:id",
-      component: _d7960232,
+      component: _3c1d164b,
       name: "events-id"
     }, {
       path: "/gallery/:id",
-      component: _0d5c6a72,
+      component: _cf0264f4,
       name: "gallery-id"
     }, {
       path: "/news/:id",
-      component: _034e51ed,
+      component: _58afd476,
       name: "news-id"
     }, {
       path: "/",
-      component: _013ebcf8,
+      component: _add601ca,
       name: "index"
     }],
 

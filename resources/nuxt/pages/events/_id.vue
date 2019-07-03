@@ -93,7 +93,7 @@ html {
 }
 .wrapper {
   display: grid;
-  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
+  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -166,7 +166,7 @@ article #Modal {
   background: #0C6293;
   grid-column: 1/15;
   display: grid;
-  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
+  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
 }
 
 #Footer {
@@ -256,7 +256,7 @@ article #Modal {
 
 @media (max-width: 420px) {
   .wrapper {
-  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
+  grid-template-columns: 0.5fr repeat(12, 1fr) 0.5fr;
 }
   html {
   font-size: 6px;
@@ -283,6 +283,7 @@ article #Modal {
 .events article p {
     grid-column: 1/7;
     margin: 5vw 0;
+    font-size: 2.2rem;
   }
 
   .another_events header h3 {

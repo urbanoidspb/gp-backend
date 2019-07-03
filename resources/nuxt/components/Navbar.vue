@@ -41,11 +41,12 @@ export default {
     .logo {
         height: 4.5rem;
         max-width: 10rem;
+        margin-left: 1.5rem;
     }
 
     .burger_btn {
-        width: 3rem;
-        height: 3rem;
+        width: 4rem !important;
+        height: 4rem;
         display: none;
         border: none;
         background: none;
@@ -92,6 +93,15 @@ export default {
             margin-left: -4rem;
         }
 
+        .logo {
+            height: 9rem;
+            max-width: 15rem;
+        }
+
+        nav {
+        height: 6vw;
+    }
+
         ul {
             width: 110%;
             align-items: center;
@@ -126,6 +136,7 @@ export default {
         .burger_btn {
             margin-top: 1vw;
         }
+        
     }
 
     @media (max-width: 560px) {
@@ -136,24 +147,18 @@ export default {
 
     @media (max-width: 420px) {
         .logo {
-            height: 8rem;
-            max-width: 12rem;
+            height: 9rem;
+            max-width: 15rem;
         }
+
+        nav {
+        height: 6vw;
+    }
 
 
         .burger_btn {
             margin-top: 5vw;
         }
-    }
-
-    .fade-enter-active,
-    .fade-leave-active {
-        transition: opacity .3s ease;
-    }
-
-    .fade-enter,
-    .fade-leave-to {
-        opacity: 0;
     }
 </style>
 

@@ -50,7 +50,7 @@ export default {
         justify-content: flex-end;
         padding: 0;
         width: 100%;
-        height: 12vw;
+        height: 17vw;
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
         color: white;
@@ -97,6 +97,7 @@ export default {
         .news {
             height: 30vw;
             padding: 1rem 2rem;
+            border-radius: 10px;
         }
         h2 {
             font-size: 2rem;
