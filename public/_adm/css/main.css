@@ -1,0 +1,13 @@
+form.collection--delete-item {
+    margin-top: 10px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.photo-block {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
