@@ -39,7 +39,7 @@
 
 
                             <span class="title">{{ $newsItem->title }}</span>
-                            <blockquote>{{ str_limit($newsItem->text) }}</blockquote>
+                            <blockquote>{!! Str::limit(strip_tags($newsItem->text)) !!}</blockquote>
                         </li>
                     @endforeach
                 </ul>
