@@ -25,11 +25,11 @@
 
             <div class="file-field input-field">
                 <div class="btn">
-                    <span>Файл</span>
+                    <span>Обложка</span>
                     <input type="file" accept="image/*" name="photo">
                 </div>
                 <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Загрузить фотографию">
+                    <input class="file-path validate" type="text" placeholder="Фотография для обложки">
                 </div>
             </div>
 
