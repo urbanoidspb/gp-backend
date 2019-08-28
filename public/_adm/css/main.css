@@ -11,3 +11,7 @@ form.collection--delete-item {
     padding: 5px;
     margin: 5px;
 }
+
+.hiddendiv {
+    display: none !important;
+}

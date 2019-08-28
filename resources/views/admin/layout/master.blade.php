@@ -28,6 +28,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
+<script src="https://cdn.tiny.cloud/1/{{ config('services.tinymce.api-key') }}/tinymce/5/tinymce.min.js"
+        ></script>
 <script src="{{ asset('_adm/js/materialize.min.js') }}"></script>
 <script src="{{ asset('_adm/js/main.js') }}"></script>
 @stack('scripts')

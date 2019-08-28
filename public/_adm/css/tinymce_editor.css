@@ -1,0 +1,11 @@
+hr {
+    border: none;
+    text-align: center;
+}
+
+hr::after {
+    content: "***";
+    display: inline;
+    padding: 0 0.5em;
+    font-size: 2rem;
+}
