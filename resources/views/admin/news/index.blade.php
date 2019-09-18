@@ -19,14 +19,14 @@
                 <ul class="collection">
                     @foreach($news as $newsItem)
                         <li id="collection-news--{{ $newsItem->id }}" class="collection-item row" style="display: flex; flex-direction: row;">
-                            <div>
+                            <div style="display: flex">
                             @if(count($newsItem->photos) > 0)
-                                <img align="left" style="max-height: 85px; width: auto; margin-right: 1rem" src="{{ $newsItem->photos[0]->path }}">
+                                <img align="left" style="max-height: 85px; width: auto; max-width: 110px; justify-self: center; align-self: center; margin-right: 1rem" src="{{ $newsItem->photos[0]->path }}">
                             @endif
                             </div>
                             <span style="align-self: center">
                                 <span class="title">{{ $newsItem->title }}</span><br>
-                                <blockquote class="truncate">{!! Str::limit(strip_tags($newsItem->text)) !!}</blockquote>
+                                <blockquote class="truncate">{!! Str::limit(strip_tags($newsItem->text), 80) !!}</blockquote>
                             </span>
                             <div style="margin-left: auto">
                                 <a href="{{ route('admin.news.edit', $newsItem) }}"
