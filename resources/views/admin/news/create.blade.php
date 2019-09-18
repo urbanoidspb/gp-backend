@@ -18,8 +18,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="text" class="materialize-textarea" name="text"></textarea>
-                    <label for="text">Текст</label>
+                    <textarea id="text" class="materialize-textarea" name="text" placeholder="Текст"></textarea>
                 </div>
             </div>
 
